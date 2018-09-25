@@ -1,5 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+
+@import './partials/_setup.scss';
+@import './partials/_utils.scss';
+@import './partials/_typography.scss';
