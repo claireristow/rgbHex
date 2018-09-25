@@ -3,14 +3,25 @@ import './App.css';
 
 //COMPONENTS
 import Form from './components/Form';
-import Hex from './components/Form';
+import Converter from './components/Converter';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      hexValue: '#000000'
+      rgbValue: '',
+      hexValue: ''
     }
+  }
+  rgbInput = (userInput) => {
+    this.setState({
+      rgbValue: userInput
+    })
+  }
+  updateHex = (hexValue) => {
+    this.setState({
+      hexValue: hexValue
+    })
   }
   render() {
     return (
@@ -19,8 +30,8 @@ class App extends Component {
           <h1>RGB to Hex Converter</h1>
         </header>
         <main>
-          <Form />
-          {/* <Hex hexValue={this.state.hexValue} /> */}
+          <Form rgbInput={this.rgbInput} />
+          <Converter rgbValue={this.state.rgbValue} hexValue={this.updateHex} />
         </main>
 
       </div>
